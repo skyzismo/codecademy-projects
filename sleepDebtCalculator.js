@@ -1,5 +1,7 @@
 //a bit of code here
 
+let week = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+
 const getSleepHours = (day) => {
     switch (day){
         case 'monday':
@@ -15,20 +17,20 @@ const getSleepHours = (day) => {
         case 'saturday':
             return 6;
         case 'sunday':
-            return 6;
+            return 7.5;
     }
 };
 
-//pode ser refatorado como um loop (feito como o exercicio exigiu :/)
-const getActualSleepHours = () => 
-    getSleepHours('monday') + 
-    getSleepHours('tuesday') + 
-    getSleepHours('wednesday') + 
-    getSleepHours('thursday') + 
-    getSleepHours('friday') + 
-    getSleepHours('saturday') + 
-    getSleepHours('sunday')
-;
+//refatorado :)
+const getActualSleepHours = () =>{
+    let sumOfHours = 0;
+
+    for (let day in week){
+        sumOfHours += getSleepHours(week[day]);
+    }
+
+    return sumOfHours;
+};
 
 const getIdealSleepHours = () => {
     let idealHours = 8;
@@ -54,4 +56,3 @@ const calculateSleepDebt = () => {
 
 //uma forma alternativa é apenas chamar a função aqui e dar o log em cada pedaço de condição
 console.log(calculateSleepDebt());
-
