@@ -1,7 +1,5 @@
 //a bit of code here
 
-let week = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
-
 const getSleepHours = (day) => {
     switch (day){
         case 'monday':
@@ -23,6 +21,7 @@ const getSleepHours = (day) => {
 
 //refatorado :)
 const getActualSleepHours = () =>{
+    let week = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
     let sumOfHours = 0;
 
     for (let day in week){
