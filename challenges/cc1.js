@@ -10,8 +10,6 @@ const canIVote = age => {
     }
 };
 
-console.log(canIVote(18));
-
 //q3
 const agreeOrDisagree = (agreement1, agreement2) =>{
     if (agreement1 === agreement2){
@@ -22,8 +20,6 @@ const agreeOrDisagree = (agreement1, agreement2) =>{
     }
 };
 
-console.log(agreeOrDisagree('nop', 'nop'));
-
 //q4
 const lifePhase = age => {
     if(age <= 3 && age >= 0){return 'baby' }
@@ -33,8 +29,6 @@ const lifePhase = age => {
     else if(age <= 140 && age >= 65){return 'senior citizen'}
     else if(age < 0 || age > 140){return 'This is not a valid age'}
 };
-
-console.log(lifePhase(140));
 
 //q5
 const finalGrade = (gradeOne, gradeTwo, gradeThree) => {
@@ -49,14 +43,10 @@ const finalGrade = (gradeOne, gradeTwo, gradeThree) => {
     else if(avg <= 100 && avg >= 90){return 'A'}
 };
 
-console.log(finalGrade(101, 101, 101));
-
 //q6
 const reportingForDuty = (rank, lastName) => {
     return `${rank} ${lastName} reporting for duty!`;
 };
-
-console.log(reportingForDuty('Private', 'Fido'));
 
 //q7
 const rollTheDice = () => {
@@ -67,8 +57,6 @@ const rollTheDice = () => {
         let die2 = Math.floor(Math.random() * 6) + 1;
         return die1 + die2;
 };
-
-console.log(rollTheDice());
 
 //q8
 const calculateWeight = (earthWeight, planet) => {
@@ -88,8 +76,6 @@ const calculateWeight = (earthWeight, planet) => {
     }
 };
 
-console.log(calculateWeight(100, 'Jupiter'));
-
 //q9
 const truthyOrFalsy = value => {
     if(value){
@@ -100,23 +86,16 @@ const truthyOrFalsy = value => {
     }
 }
 
-console.log(truthyOrFalsy(0));
-
 //q10
 const numImaginaryFriends = numFriends => {
     let imaginaryFriends = 0;
     return imaginaryFriends = Math.ceil(numFriends * 0.25);
 };
 
-console.log(numImaginaryFriends(20));
-console.log(numImaginaryFriends(10));
-
 //q11
 const sillySentence = (adj, verb, noun) => {
     return `I am so ${adj} because I ${verb} coding! Time to write some more awesome ${noun}!`;
 };
-
-console.log(sillySentence('excited', 'love', 'functions'));
 
 //q12
 const howOld = (age, year) => {
@@ -142,4 +121,92 @@ const howOld = (age, year) => {
     }
 };
 
-console.log(howOld(19, 1989));
+//q13
+const whatRelation = percentSharedDNA => {
+    if (percentSharedDNA === 100) {
+        return 'You are likely identical twins.'
+    }
+    if (percentSharedDNA >= 35 && percentSharedDNA <= 99) {
+        return 'You are likely parent and child or full siblings.'
+    }
+    if (percentSharedDNA >= 14 && percentSharedDNA <= 34) {
+        return 'You are likely grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings.'
+    }
+    if (percentSharedDNA >= 6 && percentSharedDNA <= 13) {
+        return 'You are likely 1st cousins.'
+    }
+    if (percentSharedDNA >= 3 && percentSharedDNA <= 5) {
+        return 'You are likely 2nd cousins.'
+    }
+    if (percentSharedDNA >= 1 && percentSharedDNA <= 2) {
+        return 'You are likely 3rd cousins'
+    }
+    else if(percentSharedDNA === 0){
+        return 'You are likely not related.'
+    }
+    
+}
+
+//q14
+const tipCalculator = (quality, total) => {
+    switch (quality) {
+        case 'bad':
+            return (total * 0.05);
+        case 'ok':
+            return (total * 0.15);
+        case 'good':
+            return (total * 0.2);
+        case 'excellent':
+            return (total * 0.3);
+        default:
+            return (total * 0.18);
+    }
+};
+
+//q15
+const toEmoticon = word => {
+    switch(word){
+        case 'shrug':
+            return '|_{"}_|';
+        case 'smiley face':
+            return ':)';
+        case 'frowny face':
+            return ':(';
+        case 'winky face':
+            return ';)';
+        case 'heart':
+            return '<3';
+        default:
+            return '|_(* ~ *)_|';
+    }
+};
+
+const colorMessage = (favoriteColor, shirtColor) =>{
+    if(favoriteColor === shirtColor){
+        return 'The shirt is your favorite color!';
+    }else{
+        return 'That is a nice color';
+    }
+};
+
+const isEven = number => {
+    if(number == 0){
+        return true;
+    }else if (number % 2 == 0){
+        return true;
+    }else if (number % 2 == 1){
+        return false;
+    }
+};
+
+const numberDigits = x => {
+    if(x >= 0 && x <= 9){
+        return `One digit: ${x}`;
+    }
+    else if(x >= 10 && x <= 99){
+        return `Two digits: ${x}`;
+    }
+    else{
+        return `The number is: ${x}`;
+    }
+};
